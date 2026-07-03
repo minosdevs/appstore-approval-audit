@@ -1,6 +1,6 @@
-# 🍎 appstore-approval-audit
+# appstore-approval-audit
 
-**🇬🇧 [English version](README.md)**
+**[English version](README.md)**
 
 **Passe la review Apple du premier coup.**
 
@@ -12,11 +12,11 @@ Forgé en shippant une vraie app iOS (IAP + IA) : chaque check vient d'un piège
 
 ## Ce qu'il vérifie
 
-- 💸 **Achats (3.1.1)** — Restore sur *chaque* paywall, prix depuis StoreKit, essai gratuit conforme
-- 🔒 **Privacy (5.1.1 / 5.1.2)** — suppression de compte in-app, App Privacy label, divulgation IA, tiers nommés dans la privacy policy
-- 🕳️ **Pièges de config** — secrets dans le bundle, export compliance, `UIBackgroundModes` parasites, permissions injustifiées
-- 🧭 **Flux que le reviewer teste** — funnels sans issue, reset de mot de passe en build prod, timeouts, comptes démo
-- 🏪 **App Store Connect** — abos « Missing Metadata », pages légales en 404, métadonnées malhonnêtes, les 10 dernières minutes avant submit
+- **Achats (3.1.1)** — Restore sur *chaque* paywall, prix depuis StoreKit, essai gratuit conforme
+- **Privacy (5.1.1 / 5.1.2)** — suppression de compte in-app, App Privacy label, divulgation IA, tiers nommés dans la privacy policy
+- **Pièges de config** — secrets dans le bundle, export compliance, `UIBackgroundModes` parasites, permissions injustifiées
+- **Flux que le reviewer teste** — funnels sans issue, reset de mot de passe en build prod, timeouts, comptes démo
+- **App Store Connect** — abos « Missing Metadata », pages légales en 404, métadonnées malhonnêtes, les 10 dernières minutes avant submit
 
 ## Installation
 
@@ -43,11 +43,11 @@ Tu obtiens un rapport structuré : verdict, findings classés **BLOCKER / HIGH /
 ## Structure
 
 ```
-SKILL.md                       ← le skill (méthode d'audit en 4 passes)
+SKILL.md                       <- le skill (méthode d'audit en 4 passes)
 references/
-  guidelines-rejets.md         ← les guidelines qui rejettent vraiment, piège par piège
-  asc-checklist.md             ← App Store Connect champ par champ + notes reviewer
-  rapport-audit.md             ← le format du rapport rendu
+  guidelines-rejets.md         <- les guidelines qui rejettent vraiment, piège par piège
+  asc-checklist.md             <- App Store Connect champ par champ + notes reviewer
+  rapport-audit.md             <- le format du rapport rendu
 ```
 
 ## Pourquoi

@@ -1,6 +1,6 @@
-# 🍎 appstore-approval-audit
+# appstore-approval-audit
 
-**🇫🇷 [Version française](README.fr.md)**
+**[Version française](README.fr.md)**
 
 **Pass Apple review on the first try.**
 
@@ -12,11 +12,11 @@ Forged while shipping a real iOS app (IAP + AI): every check comes from a trap h
 
 ## What it checks
 
-- 💸 **Purchases (3.1.1)** — Restore on *every* paywall, prices from StoreKit, compliant free trial
-- 🔒 **Privacy (5.1.1 / 5.1.2)** — in-app account deletion, App Privacy label, AI disclosure, third parties named in the privacy policy
-- 🕳️ **Config traps** — secrets in the bundle, export compliance, stray `UIBackgroundModes`, unjustified permissions
-- 🧭 **Flows the reviewer actually tests** — dead-end funnels, password reset in a production build, timeouts, demo accounts
-- 🏪 **App Store Connect** — "Missing Metadata" subscriptions, 404 legal pages, dishonest metadata, the last 10 minutes before submit
+- **Purchases (3.1.1)** — Restore on *every* paywall, prices from StoreKit, compliant free trial
+- **Privacy (5.1.1 / 5.1.2)** — in-app account deletion, App Privacy label, AI disclosure, third parties named in the privacy policy
+- **Config traps** — secrets in the bundle, export compliance, stray `UIBackgroundModes`, unjustified permissions
+- **Flows the reviewer actually tests** — dead-end funnels, password reset in a production build, timeouts, demo accounts
+- **App Store Connect** — "Missing Metadata" subscriptions, 404 legal pages, dishonest metadata, the last 10 minutes before submit
 
 ## Install
 
@@ -43,11 +43,11 @@ You get a structured report: verdict, findings ranked **BLOCKER / HIGH / MEDIUM 
 ## Structure
 
 ```
-SKILL.md                       ← the skill (4-pass audit method)
+SKILL.md                       <- the skill (4-pass audit method)
 references/
-  guidelines-rejets.md         ← the guidelines that actually reject, trap by trap
-  asc-checklist.md             ← App Store Connect field by field + reviewer notes template
-  rapport-audit.md             ← the report output format
+  guidelines-rejets.md         <- the guidelines that actually reject, trap by trap
+  asc-checklist.md             <- App Store Connect field by field + reviewer notes template
+  rapport-audit.md             <- the report output format
 ```
 
 ## Why
