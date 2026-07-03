@@ -54,8 +54,9 @@ Login social tiers proposé (Google, Facebook…) → **Sign in with Apple oblig
 seul = non concerné. **Audit** : lister les boutons de login.
 
 ## 2.5.4 — Background modes
-`UIBackgroundModes` déclaré mais non utilisé = rejet. **Audit** : lire l'Info.plist GÉNÉRÉ (pas juste
-la config source) et justifier chaque mode.
+`UIBackgroundModes` déclaré mais non utilisé = rejet. **Audit** : lire l'**Info.plist FINAL** et
+justifier chaque mode — *Expo : celui du build généré (prebuild/EAS), pas juste `app.json` ;
+Swift : l'Info.plist du target + les Capabilities Xcode (Signing & Capabilities)*.
 
 ## 2.3 — Accurate Metadata
 - Screenshots = vraies captures de l'app (device réel, compte peuplé).
@@ -66,15 +67,27 @@ la config source) et justifier chaque mode.
 
 ## Export compliance & âge
 - `ITSAppUsesNonExemptEncryption=false` dans la config → question réglée à chaque build.
+  *Expo : `app.json → ios.infoPlist` · Swift : Info.plist du target.*
 - Âge : le système répond seul via le questionnaire ; l'IA/contenu généré donne souvent **9+** → normal,
   pas un blocker. UGC privé non partagé ≠ UGC public (répondre No à « user-generated content » public).
 
 ## Pièges de dernière ligne droite (hors guidelines, vécus)
+Communs à tous les stacks :
 - Abos **« Missing Metadata »** : screenshot de review par abo + **localisation du display name du
-  GROUPE** d'abonnement. Tant que pas « Ready to Submit », les offerings du SDK sont VIDES (le paywall
-  du reviewer serait cassé).
+  GROUPE** d'abonnement. Tant que pas « Ready to Submit », les produits chargés par le SDK
+  (offerings RevenueCat, `Product.products(for:)` StoreKit) reviennent VIDES → le paywall du
+  reviewer serait cassé.
 - **Sélectionner les abonnements dans la version** à la 1re soumission (champ « Optional » trompeur).
 - Testeur TestFlight interne bloqué en « Invited » : l'app n'apparaît qu'après acceptation du mail
   d'invitation (jamais par code).
-- Env gravées au build (`eas.json`) : changer une clé SDK = **rebuild obligatoire**.
 - « Add for Review » grisé = presque toujours screenshots manquants ou build non attaché.
+
+Spécifique Expo/EAS :
+- Env gravées au build (`eas.json`) : changer une clé SDK = **rebuild obligatoire**.
+- Le dev build (ad-hoc) s'installe en direct ; le build production signé App Store ne s'installe
+  QUE via TestFlight.
+
+Spécifique Swift/Xcode :
+- Archive en configuration **Release** (les flags DEBUG/sandbox de test ne doivent pas fuiter).
+- Le fichier de config StoreKit local (`.storekit`) ne teste PAS le vrai sandbox — valider les IAP
+  sur TestFlight avant submit.

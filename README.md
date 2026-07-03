@@ -6,7 +6,9 @@
 
 A [Claude Code](https://claude.com/claude-code) skill that audits your iOS app like the pickiest Apple reviewer would — and gives you a **GO / NO-GO** verdict with exact fixes, before you hit "Submit for Review".
 
-Forged while shipping a real iOS app (Expo + IAP + AI): every check comes from a trap hit in production, not from the docs.
+**Works with any iOS stack** — native Swift/SwiftUI, Expo/React Native, or Flutter: it detects your stack first, then knows where to look in each one.
+
+Forged while shipping a real iOS app (IAP + AI): every check comes from a trap hit in production, not from the docs.
 
 ## What it checks
 

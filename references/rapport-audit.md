@@ -6,7 +6,8 @@ Format de sortie du skill. Copier cette structure, remplir, ne rien inventer san
 
 # Audit pré-soumission — <App> <version>
 
-**Date** : <date> · **Périmètre** : code + config + backend + métadonnées
+**Date** : <date> · **Stack** : <Swift/SwiftUI natif · Expo/React Native · Flutter> ·
+**Périmètre** : code + config + backend + métadonnées
 **Sections N/A** : <ex. « pas d'IAP → 3.1.1 non applicable » — expliciter, jamais passer sous silence>
 
 ## Verdict : GO / GO CONDITIONNEL / NO-GO
